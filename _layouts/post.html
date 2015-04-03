@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }} - bertg.be</title>
+    <link rel="stylesheet" href="{{page.stylesheet}}">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    {% include nav.html %}
+    <div class="container">
+      <h1 class="page-header">
+        <a href="{{ page.url }}">{{ page.title }}</a>
+        <small>{{ page.date }}</small>
+      </h1>
+      {{ content }}
+
+      <aside>
+        <div class="page-header">
+          You got to the end of this page? Great! Maybe you'd like to read some more?
+        </div>
+        <nav  class="row">
+          <div class="col-sm-6">
+            {% if page.previous %}
+              <a href="{{ page.previous.url }}">
+                {{page.previous.title}}
+              </a>
+            {% else %}
+              It appears this was the last page on the site! Wow.
+              Well I guess I could link the 404 page here.
+            {% endif %}
+          </div>
+
+          <div class="col-sm-6">
+            <a href="{{ page.next.url }}">
+              {{page.next.title}}
+            </a>
+          </div>
+        </nav>
+      </aside>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  </body>
+</html>

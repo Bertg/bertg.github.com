@@ -1,3 +1,9 @@
-name: Bertg.be
-markdown: redcarpet
-pygments: true
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+      stylesheet: "//maxcdn.bootstrapcdn.com/bootswatch/3.3.4/flatly/bootstrap.min.css"
+
+permalink: pretty
